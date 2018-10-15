@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import config from './webpack.config';
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
 const cssLoader = {
     loader: 'css-loader',
@@ -42,7 +43,8 @@ config.module.rules = config.module.rules.concat([
 ]);
 
 config.plugins = config.plugins.concat([
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin()
 ]);
 
 module.exports = config;
