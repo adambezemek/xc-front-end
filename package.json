@@ -46,9 +46,16 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "supports-color": "^5.5.0",
     "url-loader": "^1.1.2",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-router": "^3.0.1",
+    "vue-style-loader": "^4.1.2",
     "webpack": "^4.20.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^2.5.7",
+    "es6-shim": "^0.35.3"
+  }
 }

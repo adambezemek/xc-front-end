@@ -31,6 +31,24 @@ module.exports = {
                 loader: 'eslint-loader'
             },
             {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        'scss': [
+                            'vue-style-loader',
+                            'css-loader',
+                            'sass-loader'
+                        ],
+                        'sass': [
+                            'vue-style-loader',
+                            'css-loader',
+                            'sass-loader?indentedSyntax'
+                        ]
+                    }
+                }
+            },
+            {
                 test: /\.(js)$/,
                 loader: 'babel-loader'
             },
@@ -55,7 +73,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: 'demo/app/index.html',
             filename: 'index.html',
             inject: 'body',
             hash: true
