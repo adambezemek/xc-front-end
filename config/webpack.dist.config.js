@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path';
 import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
 import autoprefixer from 'autoprefixer';
 import config from './webpack.config';
@@ -21,6 +22,10 @@ const sassLoader = {
 };
 
 config.mode = "production";
+
+config.entry.app = [
+    path.resolve(__dirname, '../src/index.js')
+];
 
 config.module.rules = config.module.rules.concat([
     {

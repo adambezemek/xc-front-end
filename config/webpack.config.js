@@ -5,11 +5,7 @@ import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 module.exports = {
     devtool: 'inline-cheap-module-source-map',
-    entry: {
-        app: [
-            'src/index.js'
-        ],
-    },
+    entry: {},
     output: {
         filename: 'assets/scripts/main.min.js',
         publicPath: '/',
@@ -17,7 +13,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            src: path.resolve('src/')
+            demo: path.resolve('demo/'),
+            '@': path.resolve('src/'),
+            assets: path.resolve('src/assets')
         }
     },
     module: {

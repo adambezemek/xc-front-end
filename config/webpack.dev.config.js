@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path';
 import config from './webpack.config';
 
 const cssLoader = {
@@ -20,7 +21,10 @@ const sassLoader = {
 
 config.mode = 'development';
 
-config.entry.app.unshift('webpack-hot-middleware/client?reload=true');
+config.entry.app = [
+    'webpack-hot-middleware/client?reload=true',
+    path.resolve(__dirname, '../demo/index.js')
+];
 
 config.module.rules = config.module.rules.concat([
     {
