@@ -2,6 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import marked from 'marked';
+
+const renderer = new marked.Renderer();
 
 module.exports = {
     devtool: 'inline-cheap-module-source-map',
@@ -13,6 +16,7 @@ module.exports = {
     },
     resolve: {
         alias: {
+            'vue$': 'vue/dist/vue.esm.js',
             demo: path.resolve('demo/'),
             '@': path.resolve('src/'),
             assets: path.resolve('src/assets')
@@ -65,6 +69,23 @@ module.exports = {
                         options: {
                             limit: 8192,
                             fallback: 'file-loader?name=assets/images/[name].[ext]'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.md$/,
+                use: [
+                    {
+                        loader: 'html-loader'
+                    },
+                    {
+                        loader: 'highlight-loader'
+                    },
+                    {
+                        loader: 'markdown-loader',
+                        options: {
+                            renderer
                         }
                     }
                 ]
