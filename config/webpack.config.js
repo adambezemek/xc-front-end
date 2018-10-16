@@ -22,6 +22,9 @@ module.exports = {
             assets: path.resolve('src/assets')
         }
     },
+    performance: {
+        hints: false
+    },
     module: {
         rules: [
             {
@@ -53,22 +56,33 @@ module.exports = {
                 }
             },
             {
-                test: /\.(js)$/,
+                test: /\.(js)(\?v=\d+\.\d+\.\d+)$/,
                 loader: 'babel-loader'
             },
             {
-                test: /\.(png|jp(e*)g|gif|svg)$/,
+                test: /\.(png|jp(e*)g|gif|svg)(\?v=\d+\.\d+\.\d+)$/,
                 loader: 'image-webpack-loader',
                 enforce: 'pre'
             },
             {
-                test: /\.(png|jp(e*)g|gif|svg)$/,
+                test: /\.(png|jp(e*)g|gif)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
                             fallback: 'file-loader?name=assets/images/[name].[ext]'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'assets/fonts/[name].[ext]'
                         }
                     }
                 ]
