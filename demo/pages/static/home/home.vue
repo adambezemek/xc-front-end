@@ -1,7 +1,5 @@
 <template>
-    <div class="container container-fluid">
-        <div class="c-markdown" v-html="home"></div>
-    </div>
+    <div class="xc-cl-markdown" v-html="home"></div>
 </template>
 
 <script>

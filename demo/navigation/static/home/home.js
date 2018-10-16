@@ -1,6 +1,6 @@
-import HomeNavigation from 'demo/navigation/static/home/home-navigation.vue';
+import HomeNavigation from './home-navigation.vue';
 
-import Home from 'demo/pages/static/home.vue';
+import Home from 'demo/pages/static/home/home.vue';
 
 const HomePages = [
     {

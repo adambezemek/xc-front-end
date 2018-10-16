@@ -1,0 +1,68 @@
+.xc-cl-header {
+    display: flex;
+    position: sticky;
+    background: #343a40;
+    top: 0;
+    align-items: center;
+    height: 60px;
+    z-index: 1039;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__logo {
+        color: #fff;
+        text-decoration: none;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        font-size: 1.25rem;
+    }
+
+    &__toggle {
+        background: transparent;
+        outline: none;
+        border: 1px solid rgba(#fff, 0.1);
+        order: 2;
+        padding: 0.25rem 0.75rem;
+        cursor: pointer;
+
+        &--desktop {
+            order: 0;
+            display: none;
+            margin-right: 1rem;
+        }
+    }
+
+    &__bar {
+        background: #cecece;
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        margin: 5px 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+        height: auto;
+        flex-wrap: wrap;
+
+        &__logo {
+            order: 1;
+            flex: 1;
+            text-align: left;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &__toggle {
+            display: none;
+            
+            &--desktop {
+                display: block;
+            }
+        }
+    }
+}

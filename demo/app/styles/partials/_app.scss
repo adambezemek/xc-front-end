@@ -1,0 +1,56 @@
+.xc-cl-app {
+    &__sidebar {
+        background: #34444C;
+    }
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        width: 100%;
+
+        &__sidebar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 60px;
+            z-index: 1000;
+            height: calc(100vh - 60px) !important;
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex: 0 0 250px;
+            transition: .25s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+
+            &, &.collapsing.show {
+                width: 0;
+                flex: 0;
+            }
+
+            &.collapsing {
+                position: sticky !important;
+                transition: .3s cubic-bezier(0.455, 0.03, 0.515, 0.955) all;
+            }
+
+            &.show {
+                width: 250px;
+                flex: 0 0 250px;
+            }
+
+            & > * {
+                width: 250px;
+                flex: 0 0 250px;
+            }
+        }
+
+        &__content {
+            width: 100%;
+            transition: 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) margin;
+        }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+        &__sidebar {
+            position: static;
+            top: auto;
+            height: auto;
+            overflow: visible;
+        }
+    }
+}

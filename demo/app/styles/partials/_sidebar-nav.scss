@@ -1,0 +1,62 @@
+.xc-cl-sidebar-nav {
+    box-sizing: border-box;
+    padding: 20px;
+    line-height: 1.5;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__header {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    &__list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__links {
+        list-style-type: none;
+        margin: 10px 0 20px;
+        padding: 0 0 20px;
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__link {
+        display: block;
+        padding: 5px 0;
+        color: #f0f0f0;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+
+        &.router-link-exact-active {
+            font-weight: 600;
+            color: #fff;
+            background: rgba(255, 255, 255, .05);
+            margin: 0 -20px;
+            padding: 5px 20px;
+        }
+    }
+
+    &__list > *:last-child ul {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+        position: sticky;
+    }
+}
