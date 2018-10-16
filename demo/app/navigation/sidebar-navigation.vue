@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import SidebarNavigationMixin from '../mixins/sidebar-navigation.js';
+    import SidebarNavigationMixin from './sidebar-navigation.js';
 
     export default {
         mixins: [SidebarNavigationMixin],

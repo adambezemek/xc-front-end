@@ -1,4 +1,4 @@
-import SidebarNavigation from '../navigation/sidebar-navigation.vue';
+import SidebarNavigation from './sidebar-navigation.vue';
 
 export function CreateDynamicNavigation(routes) {
     if(typeof routes !== 'undefined') {

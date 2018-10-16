@@ -1,4 +1,4 @@
-import { CreateDynamicNavigation } from 'demo/app/util/navigation';
+import { CreateDynamicNavigation } from 'demo/app/navigation/navigation.js';
 
 import SampleComponent from 'demo/pages/components/sample.vue';
 
