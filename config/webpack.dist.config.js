@@ -25,7 +25,7 @@ const sassLoader = {
 
 config.mode = "production";
 
-config.entry.app = [
+config.entry.main = [
     path.resolve(__dirname, '../src/index.js')
 ];
 
