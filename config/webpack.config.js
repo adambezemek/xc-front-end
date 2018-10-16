@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'inline-cheap-module-source-map',
     entry: {},
     output: {
-        filename: 'assets/scripts/main.min.js',
+        filename: 'assets/scripts/[name].min.js',
         publicPath: '/',
         path: path.resolve(__dirname, '../dist')
     },

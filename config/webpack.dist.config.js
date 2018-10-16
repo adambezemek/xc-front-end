@@ -45,6 +45,18 @@ config.module.rules = config.module.rules.concat([
 
 config.devtool = '#source-map';
 
+config.optimization = {
+    splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+            vendor: {
+                name: 'vendor',
+                test: /[\\/]node_modules[\\/]/
+            }
+        }
+    }
+}
+
 config.plugins = config.plugins.concat([
     new webpack.DefinePlugin({
         'process.env': {
