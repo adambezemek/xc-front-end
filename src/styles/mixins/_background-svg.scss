@@ -1,0 +1,9 @@
+/*
+ *
+ * Pass in SVG encoding to apply as background image
+ *
+ */
+
+@mixin background-svg($svg) {
+    background-image: svg-url($svg);
+}

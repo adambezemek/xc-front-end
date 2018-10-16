@@ -1,0 +1,12 @@
+/*
+ *
+ * Utility for fetching values from complex Scss Map variables
+ *
+ */
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}

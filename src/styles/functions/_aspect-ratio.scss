@@ -1,0 +1,9 @@
+/*
+ *
+ * Returns styling for responsive aspect ratio enforcement
+ *
+ */
+
+@function aspect-ratio($width, $height) {
+    @return unquote(($height/$width * 100) + '%');
+}
