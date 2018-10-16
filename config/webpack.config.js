@@ -60,6 +60,15 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
+                test: require.resolve('jquery'),
+                use: [
+                    {
+                        loader: 'expose-loader',
+                        options: '$'
+                    }
+                ]
+            },
+            {
                 test: /\.(png|jp(e*)g|gif|svg)(\?v=\d+\.\d+\.\d+)$/,
                 loader: 'image-webpack-loader',
                 enforce: 'pre'
@@ -125,6 +134,12 @@ module.exports = {
                 failOnWarning: false,
                 failOnError: true
             }
+        }),
+
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            JQuery: 'jquery',
+            jQuery: 'jquery'
         })
     ]
 }

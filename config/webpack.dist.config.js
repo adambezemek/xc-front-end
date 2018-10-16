@@ -83,7 +83,7 @@ config.plugins = config.plugins.concat([
             warnings: false
         },
         mangle: {
-            except: ['$super', '$', 'exports', 'require']
+            except: ['$super', '$', 'jQuery', 'JQuery', 'exports', 'require']
         },
         options: {
             postcss: [autoprefixer]
