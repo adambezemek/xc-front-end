@@ -52,8 +52,7 @@
     import VueScrollTo from 'vue-scrollto';
     
     import SidebarNavigation from './navigation/sidebar-navigation.vue';
-
-    import 'bootstrap-vue/dist/bootstrap-vue.css';
+    
     import './styles/styles.scss';
 
     Vue.use(BootstrapVue);
