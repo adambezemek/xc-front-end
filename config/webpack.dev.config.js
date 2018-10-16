@@ -1,7 +1,8 @@
 import webpack from 'webpack';
 import path from 'path';
-import config from './webpack.config';
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
+import globImporter from 'node-sass-glob-importer';
+import config from './webpack.config';
 
 const cssLoader = {
     loader: 'css-loader',
@@ -13,6 +14,7 @@ const cssLoader = {
 const sassLoader = {
     loader: 'sass-loader',
     options: {
+        importer: globImporter(),
         includePaths: [
             'src/',
             'node_modules/'

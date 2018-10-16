@@ -4,7 +4,7 @@
 
 <script>
     import Vue from 'vue';
-    import hero from '@/markup/components/sample/sample.html';
+    import hero from '@/modules/components/sample/sample.html';
 
     Vue.component('xc-sample', {
         template: hero

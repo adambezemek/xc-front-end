@@ -1,0 +1,13 @@
+.c-sample {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__heading {
+        font-weight: bold;
+    }
+
+    &__copy {
+        font-style: italic;
+        letter-spacing: 0.1rem;
+    }
+}

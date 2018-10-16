@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
 import autoprefixer from 'autoprefixer';
+import globImporter from 'node-sass-glob-importer';
 import config from './webpack.config';
 
 const cssLoader = {
@@ -14,6 +15,7 @@ const cssLoader = {
 const sassLoader = {
     loader: 'sass-loader',
     options: {
+        importer: globImporter(),
         includePaths: [
             'src/',
             'node_modules/'
