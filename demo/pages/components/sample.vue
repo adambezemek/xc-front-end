@@ -4,10 +4,10 @@
 
 <script>
     import Vue from 'vue';
-    import hero from '@/modules/components/sample/sample.html';
+    import sample from '@/modules/components/sample/sample.html';
 
     Vue.component('xc-component-sample', {
-        template: hero
+        template: sample
     });
 
     export default {};
