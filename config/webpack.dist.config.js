@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
 import globImporter from 'node-sass-glob-importer';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import config from './webpack.config';
 
 const cssLoader = {
@@ -53,7 +54,19 @@ config.optimization = {
                 test: /[\\/]node_modules[\\/]/
             }
         }
-    }
+    },
+    minimizer: [
+        new UglifyJsPlugin({
+            sourceMap: true,
+            extractComments: true,
+            uglifyOptions: {
+                warnings: false,
+                mangle: {
+                    reserved: ['$super', '$', 'jQuery', 'JQuery', 'exports', 'require']
+                }
+            }
+        })
+    ]
 }
 
 config.plugins = config.plugins.concat([
