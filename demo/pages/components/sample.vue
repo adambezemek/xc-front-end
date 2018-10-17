@@ -1,5 +1,7 @@
 <template>
+<div>
     <xc-component-sample />
+    </div>
 </template>
 
 <script>
