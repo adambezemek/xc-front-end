@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
 import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
-import autoprefixer from 'autoprefixer';
 import globImporter from 'node-sass-glob-importer';
 import config from './webpack.config';
 
@@ -66,28 +65,6 @@ config.plugins = config.plugins.concat([
 
     new MiniCssExtractPlugin({
         filename: 'assets/styles/main.min.css'
-    }),
-
-    new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        unused: true,
-        dead_code: true,
-        warnings: false,
-        drop_debugger: true,
-        conditionals: true,
-        evaluate: true,
-        drop_console: true,
-        sequences: true,
-        booleans: true,
-        compress: {
-            warnings: false
-        },
-        mangle: {
-            except: ['$super', '$', 'jQuery', 'JQuery', 'exports', 'require']
-        },
-        options: {
-            postcss: [autoprefixer]
-        }
     })
 ]);
 
