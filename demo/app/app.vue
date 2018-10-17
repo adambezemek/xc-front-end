@@ -52,11 +52,14 @@
     import VueScrollTo from 'vue-scrollto';
     
     import SidebarNavigation from './navigation/sidebar-navigation.vue';
+    import ComponentSelector from './component-selector/component-selector.vue';
     
     import './styles/styles.scss';
 
     Vue.use(BootstrapVue);
     Vue.use(VueScrollTo);
+
+    Vue.component('xc-component-selector', ComponentSelector);
 
     export default {
         name: 'app'

@@ -55,6 +55,7 @@
     "stylelint": "^8.0.0",
     "stylelint-webpack-plugin": "^0.10.5",
     "supports-color": "^5.5.0",
+    "template-literals-loader": "^1.1.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.4.2",
