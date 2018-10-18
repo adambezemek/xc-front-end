@@ -7,7 +7,7 @@
 
     &__controls {
         position: absolute;
-        top: 20px;
+        top: 50%;
         right: 20px;
         padding: 1rem;
         background: #fff;
@@ -15,6 +15,7 @@
         border-radius: 6px;
         width: 150px;
         z-index: 1000;
+        transform: translateY(-50%);
 
         &.fade-enter-active, &.fade-leave-active {
             transition: opacity .3s;

@@ -1,11 +1,11 @@
 <template>
-    <xc-layout-sample :components="components">
-        <template v-for="(component, index) in components" :slot="index">
+    <xc-layout-sample :components="components" :componentMap="componentMap">
+        <template v-for="(component, index) in componentMap" :slot="index">
 
-            <xc-component-selector :key="index" :components="components" :defaultComponent="index">
+            <xc-component-selector :key="index" :template="components[componentMap[index]]">
                 <template slot-scope="visibility">
 
-                    <select class="xc-cl-component-selector__select" @focus="visibility.enableEditing" @blur="visibility.checkVisibility">
+                    <select :class="visibility.classDef" @focus="visibility.enableEditing" @blur="visibility.checkVisibility" v-model="componentMap[index]">
                         <option v-for="(component, index) in components" :value="index" :key="index">
                             {{ index }}
                         </option>
@@ -25,7 +25,8 @@
     Vue.component('xc-layout-sample', {
         template: template,
         props: {
-            components: Object
+            components: Object,
+            componentMap: Object
         }
     });
 
@@ -35,12 +36,11 @@
                 components: {
                     'Sample': require('@/modules/components/sample/sample.html'),
                     'Sample 2': require('@/modules/components/sample2/sample2.html')
+                },
+                componentMap: {
+                    slot1: 'Sample',
+                    slot2: 'Sample 2'
                 }
-            }
-        },
-        watch: {
-            isEditing: ()=> {
-                console.log(this.isEditing);
             }
         }
     };

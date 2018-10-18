@@ -3,29 +3,24 @@
         <transition name="fade">
             <div class="xc-cl-component-selector__controls" v-if="isVisible">
                 <label class="xc-cl-component-selector__label">Select Component:</label>
-                <slot :enableEditing="enableEditing" :checkVisibility="checkVisibility"></slot>
+                <slot :enableEditing="enableEditing" :checkVisibility="checkVisibility" :classDef="'xc-cl-component-selector__select'"></slot>
             </div>
         </transition>
-        <div class="xc-cl-component-selector__wrapper" v-html="components[template]"></div>
+        <div class="xc-cl-component-selector__wrapper" v-html="template"></div>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            defaultComponent: String,
-            components: Object
+            template: String
         },
         data: () => {
             return {
-                template: '',
                 isVisible: false,
                 isHover: false,
                 isEditing: false
             }
-        },
-        created: function() {
-            this.template = this.defaultComponent;
         },
         methods: {
             checkVisibility(e) {
