@@ -2,12 +2,8 @@
     <div class="xc-cl-component-selector" @mouseover="checkVisibility" @mouseleave="checkVisibility">
         <transition name="fade">
             <div class="xc-cl-component-selector__controls" v-if="isVisible">
-                <label class="xc-cl-component-selector__label" for="componentSelect">Select Component:</label>
-                <select class="xc-cl-component-selector__select" v-model="template" id="componentSelect" @focus="isEditing = true" @blur="checkVisibility">
-                    <option v-for="(component, index) in components" :value="index" :key="index">
-                        {{ index }}
-                    </option>
-                </select>
+                <label class="xc-cl-component-selector__label">Select Component:</label>
+                <slot :enableEditing="enableEditing" :checkVisibility="checkVisibility"></slot>
             </div>
         </transition>
         <div class="xc-cl-component-selector__wrapper" v-html="components[template]"></div>
@@ -46,6 +42,9 @@
                         this.isVisible = false;
                     }
                 }
+            },
+            enableEditing() {
+                this.isEditing = true;
             }
         }
     }
