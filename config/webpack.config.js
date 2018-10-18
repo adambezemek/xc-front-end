@@ -56,7 +56,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.(js)(\?v=\d+\.\d+\.\d+)$/,
+                test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader'
             },
             {
