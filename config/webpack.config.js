@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
 import marked from 'marked';
 
 const renderer = new marked.Renderer();
@@ -141,6 +142,8 @@ module.exports = {
             $: 'jquery',
             JQuery: 'jquery',
             jQuery: 'jquery'
-        })
+        }),
+
+        new VueLoaderPlugin()
     ]
 }

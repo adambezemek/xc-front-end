@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import path from 'path';
-import VueLoaderPlugin from 'vue-loader/lib/plugin';
 import globImporter from 'node-sass-glob-importer';
 import config from './webpack.config';
 
@@ -45,8 +44,7 @@ config.module.rules = config.module.rules.concat([
 ]);
 
 config.plugins = config.plugins.concat([
-    new webpack.HotModuleReplacementPlugin(),
-    new VueLoaderPlugin()
+    new webpack.HotModuleReplacementPlugin()
 ]);
 
 module.exports = config;

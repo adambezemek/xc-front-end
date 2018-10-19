@@ -25,10 +25,6 @@ const sassLoader = {
 
 config.mode = "production";
 
-config.entry.main = [
-    path.resolve(__dirname, '../src/index.js')
-];
-
 config.module.rules = config.module.rules.concat([
     {
         test: /\.(css|scss)$/,

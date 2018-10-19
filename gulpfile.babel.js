@@ -14,6 +14,7 @@ import PluginError from 'plugin-error';
 
 const paths = {
     src: path.join(__dirname, 'src'),
+    demo: path.join(__dirname, 'demo'),
     dist: path.join(__dirname, 'dist')
 }
 
@@ -68,8 +69,40 @@ export const dev = gulp.series(startDevServer);
  * Usage: gulp prod
  */
 const buildProd = (cb) => {
-    const config = require('./config/webpack.dist.config');
+    const config = setEntry(
+        require('./config/webpack.dist.config'),
+        paths.src
+    );
 
+    build(config, cb);
+}
+
+export const prod  = gulp.series(clean, buildProd);
+
+/**
+ * Description: Build the Demo site out as minified assets
+ *
+ * Usage: gulp demo
+ */
+const buildDemo = (cb) => {
+    const config = setEntry(
+        require('./config/webpack.dist.config'),
+        paths.demo
+    );
+
+    build(config, cb);
+}
+
+export const demo = gulp.series(clean, buildDemo);
+
+// Adds entry path to webpack config file
+function setEntry(config, entryPath) {
+    config.entry.main = path.join(entryPath, 'index.js');
+    return config;
+}
+
+// Builds distribution assets
+function build(config, cb) {
     webpack(config, (err, stats) => {
         if(err) {
             throw new PluginError('webpack', err);
@@ -92,7 +125,5 @@ const buildProd = (cb) => {
         }));
 
         cb();
-    });
+    })
 }
-
-export const prod  = gulp.series(clean, buildProd);
