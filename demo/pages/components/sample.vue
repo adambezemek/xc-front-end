@@ -4,7 +4,7 @@
 </template>
 
 <script>
-    import sample from '@/modules/components/sample/sample.html';
+    import sample from '@/markup/components/sample/sample.html';
 
     export default {
         data: () => {

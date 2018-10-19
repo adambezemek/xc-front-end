@@ -20,7 +20,7 @@
 
 <script>
     import Vue from 'vue';
-    import template from '@/modules/layouts/sample/sample.html';
+    import template from '@/markup/layouts/sample/sample.html';
 
     Vue.component('xc-layout-sample', {
         template: template,
@@ -34,8 +34,8 @@
         data: () => {
             return {
                 components: {
-                    'Sample': require('@/modules/components/sample/sample.html'),
-                    'Sample 2': require('@/modules/components/sample2/sample2.html')
+                    'Sample': require('@/markup/components/sample/sample.html'),
+                    'Sample 2': require('@/markup/components/sample2/sample2.html')
                 },
                 componentMap: {
                     slot1: 'Sample',
