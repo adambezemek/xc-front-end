@@ -1,6 +1,6 @@
 import { CreateDynamicNavigation } from 'demo/app/navigation/navigation.js';
 
-import SampleLayout from 'demo/pages/layouts/sample/sample.vue';
+import SampleLayout from 'demo/pages/layouts/sample.vue';
 
 const LayoutPages = CreateDynamicNavigation([
     {
