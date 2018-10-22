@@ -35,7 +35,6 @@ export const clean = (cb) => del([paths.dist])
  *
  * Usage: gulp dev
  */
-
 const startDevServer = () => {
     const config = require('./config/webpack.dev.config');
     const compiler = webpack(config);

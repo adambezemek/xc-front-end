@@ -1,0 +1,42 @@
+.c-btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        box-shadow: none;
+    }
+
+    &--primary {
+        color: #fff;
+        background-color: $xc-color-primary;
+        border-color: $xc-color-primary;
+
+        &:not(:disabled) {
+            &:hover {
+                color: #fff;
+                background-color: darken($xc-color-primary, 5);
+                border-color: darken($xc-color-primary, 5);
+            }
+    
+            &:focus,
+            &:active {
+                box-shadow: 0 0 0 0.2rem rgba($xc-color-primary, .5);
+            }
+        }
+    }
+}
