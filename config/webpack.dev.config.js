@@ -38,7 +38,8 @@ config.module.rules = config.module.rules.concat([
         use: [
             'style-loader',
             cssLoader,
-            sassLoader
+            sassLoader,
+            'postcss-loader'
         ]
     }
 ]);

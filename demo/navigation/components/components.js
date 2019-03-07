@@ -1,6 +1,7 @@
 import { CreateDynamicNavigation } from 'demo/app/navigation/navigation.js';
 
 import SampleComponent from 'demo/pages/components/sample.vue';
+import CardComponent from 'demo/pages/components/card.vue';
 
 const ComponentPages = CreateDynamicNavigation([
     {
@@ -15,7 +16,13 @@ const ComponentPages = CreateDynamicNavigation([
                 path: 'sample',
                 name: 'Sample Component',
                 component: SampleComponent
+            },
+            {
+                path: 'card',
+                name: 'Card Component',
+                component: CardComponent
             }
+
         ]
     }
 ]);

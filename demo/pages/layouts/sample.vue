@@ -35,11 +35,11 @@
             return {
                 components: {
                     'Sample': require('@/markup/components/sample/sample.html'),
-                    'Sample 2': require('@/markup/components/sample2/sample2.html')
+                    'Card': require('@/markup/components/card/card.html')
                 },
                 componentMap: {
                     slot1: 'Sample',
-                    slot2: 'Sample 2'
+                    slot2: 'Card'
                 }
             }
         }
