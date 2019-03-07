@@ -130,7 +130,7 @@ module.exports = {
             failOnError: false,
             quiet: false
         }),
-        
+
         new webpack.LoaderOptionsPlugin({
             eslint: {
                 failOnWarning: false,
@@ -146,4 +146,4 @@ module.exports = {
 
         new VueLoaderPlugin()
     ]
-}
+};

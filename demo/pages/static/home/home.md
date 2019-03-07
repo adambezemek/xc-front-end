@@ -4,34 +4,46 @@ Documentation for the XCentium Component Library
 
 ## Getting Started
 
-To build and run this project locally, clone the repository from: [need repo]
+- To build and run this project locally, clone the [repository](https://github.com/adambezemek/xc-front-end):
 
-In the main project directory, run `npm install` to install all dependencies
+```
+    git clone https://github.com/adambezemek/xc-front-end.git
+```
+
+- To install all dependencies - in the root of the main project directory run:
+
+```
+    npm install
+```
 
 ## Prerequisites
-* NodeJS
+
+- [Node.js](https://nodejs.org/en/)
 
 ## Build Tasks
 
-* `gulp dev`  
-Runs the development server and allows you to develop locally
+- To runs the development server and allows you to develop locally
 
-* `gulp demo-prod`  
-Builds the demo application distribution assets
+```
+    npm start
+```
 
-* `gulp prod`  
-Builds the production website distribution assets
+- To build the distribution assets
+
+```
+    npm run build
+```
 
 ## Common Build Errors
 
 If you receive the build error `Expected indentation of 0 spaces` when building for the first time, you can fix with the following methods
 
- * **VS Code**  
-In the bottom-right corner of the editor, click on CRLF and change to LF
+- **VS Code**<br>
+  In the bottom-right corner of the editor, click on CRLF and change to LF
 
-* **Visual Studio**  
-File > Save As > Click the dropdown arrow > Save with encoding.  
-Change the line endings from CRLF to LF
+- **Visual Studio**<br>
+  File > Save As > Click the dropdown arrow > Save with encoding.<br>
+  Change the line endings from CRLF to LF
 
-* **Notepad++**  
-Do a find &amp; replace of `\r\n` to `\n` in the offending files.
+- **Notepad++**<br>
+  Do a find & replace of `\r\n` to `\n` in the offending files.

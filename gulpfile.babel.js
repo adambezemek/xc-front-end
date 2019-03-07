@@ -16,7 +16,7 @@ const paths = {
     src: path.join(__dirname, 'src'),
     demo: path.join(__dirname, 'demo'),
     dist: path.join(__dirname, 'dist')
-}
+};
 
 /**
  * Description: Deletes dist folder and contents
@@ -41,7 +41,7 @@ const startDevServer = () => {
 
     serve({
         port: process.env.PORT || 3000,
-        open: false,
+        open: true,
         server: {
             baseDir: 'src'
         },
@@ -58,7 +58,7 @@ const startDevServer = () => {
             webpackHotMiddleware(compiler)
         ]
     });
-}
+};
 
 export const dev = gulp.series(startDevServer);
 
@@ -74,9 +74,9 @@ const buildProd = (cb) => {
     );
 
     build(config, cb);
-}
+};
 
-export const prod  = gulp.series(clean, buildProd);
+export const prod = gulp.series(clean, buildProd);
 
 /**
  * Description: Build the Demo site out as minified assets
@@ -90,7 +90,7 @@ const buildDemo = (cb) => {
     );
 
     build(config, cb);
-}
+};
 
 export const demo = gulp.series(clean, buildDemo);
 
@@ -124,5 +124,5 @@ function build(config, cb) {
         }));
 
         cb();
-    })
+    });
 }

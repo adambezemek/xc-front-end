@@ -8,6 +8,8 @@
     "url": "https://github.com/AdamMornes/xc-front-end.git"
   },
   "scripts": {
+    "start": "gulp dev",
+    "build": "gulp prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [

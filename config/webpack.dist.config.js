@@ -1,6 +1,5 @@
 import webpack from 'webpack';
-import path from 'path';
-import MiniCssExtractPlugin  from 'mini-css-extract-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import globImporter from 'node-sass-glob-importer';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import config from './webpack.config';
@@ -10,7 +9,7 @@ const cssLoader = {
     options: {
         url: true
     }
-}
+};
 
 const sassLoader = {
     loader: 'sass-loader',
@@ -23,19 +22,19 @@ const sassLoader = {
     }
 };
 
-config.mode = "production";
+config.mode = 'production';
 
 config.module.rules = config.module.rules.concat([
     {
         test: /\.(css|scss)$/,
         use: [
             {
-                loader: MiniCssExtractPlugin.loader,
+                loader: MiniCssExtractPlugin.loader
             },
             cssLoader,
             'postcss-loader',
             sassLoader
-        ],
+        ]
     }
 ]);
 
@@ -63,7 +62,7 @@ config.optimization = {
             }
         })
     ]
-}
+};
 
 config.plugins = config.plugins.concat([
     new webpack.DefinePlugin({
