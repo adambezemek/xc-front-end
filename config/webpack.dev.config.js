@@ -10,6 +10,16 @@ const cssLoader = {
     }
 };
 
+const postCssLoader = {
+    loader: 'postcss-loader',
+    options: {
+      plugins: [
+        require('autoprefixer')({}),
+      ]
+    }
+  };
+  
+
 const sassLoader = {
     loader: 'sass-loader',
     options: {
@@ -39,7 +49,7 @@ config.module.rules = config.module.rules.concat([
             'style-loader',
             cssLoader,
             sassLoader,
-            'postcss-loader'
+            postCssLoader
         ]
     }
 ]);

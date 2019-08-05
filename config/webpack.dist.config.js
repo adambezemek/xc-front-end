@@ -7,8 +7,20 @@ import config from './webpack.config';
 const cssLoader = {
     loader: 'css-loader',
     options: {
-        url: true
+        url: true,
+        minimize: true
     }
+};
+
+const postCssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: [
+      require('autoprefixer')({}),
+      require('cssnano')({ preset: 'default' })
+    ],
+    minimize: true
+  }
 };
 
 const sassLoader = {
@@ -18,7 +30,8 @@ const sassLoader = {
         includePaths: [
             'src/',
             'node_modules/'
-        ]
+        ],
+        minimize: true
     }
 };
 
@@ -32,7 +45,7 @@ config.module.rules = config.module.rules.concat([
                 loader: MiniCssExtractPlugin.loader
             },
             cssLoader,
-            'postcss-loader',
+            postCssLoader,
             sassLoader
         ]
     }
